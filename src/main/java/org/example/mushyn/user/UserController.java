@@ -33,13 +33,22 @@ public class UserController {
     }
 
     @PutMapping
-    public User uptade(@RequestBody User user) {
+    public User update(@RequestBody User user) {
         return service.update(user);
     }
 
+    @GetMapping("/hello/user")
+    public String helloUser() {
+        return "Hello User!";
+    }
 
+    @GetMapping("hello/admin")
+    public String helloAdmin() {
+        return "Hello Admin!";
+    }
 
-
-
-
+    @GetMapping("hello/unknown")
+    public String helloUnknown() {
+        return "Hello Unknown!";
+    }
 }
